@@ -9,9 +9,9 @@ After completing this exercise, you should be able to discuss or answer the foll
 - How do you **declare** a variable?
   Variables are declared with 'let' and 'const'
 - How do you initialize (**assign a value to**) a variable?
-  Variables are initialized with assignment operator '='.
+  Variables are initialized with assignment operator '=' and a value.
 - What characters are allowed in variable names?
-  Letters, digits, or the symbols '$' and '\_'.
+  Letters, digits, or the symbols '$' and '\_' are allowed but digits cannot be the first character.
 - What does it mean to say that variable names are "case sensitive"?
   'Case sensitive' means uppercase and lowercase letters are different than each other.
 - What is the purpose of a string?
