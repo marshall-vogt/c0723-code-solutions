@@ -9,7 +9,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - Describe array literal notation.
   Array literals consist of a variable with an assignment operator, square brackets, and elements inside the brackets.
 - How are arrays different from "plain" objects?
-  Arrays allow the order of the elements to be managed.
+  Arrays allow the order of the elements to be managed with a numeric index.
 - What number represents the first index of an array?
   Arrays are 'zero-indexed' so the first element is notated with '0'.
 - What is the `length` property of an array?
