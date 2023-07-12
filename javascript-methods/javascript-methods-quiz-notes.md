@@ -13,7 +13,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - How do you remove the last element from an array?
   The 'pop' method allows the last element to be removed.
 - How do you round a number down to the nearest integer?
-  With the 'round' method of the 'Math' object.
+  With the 'floor' method of the 'Math' object.
 - How do you generate a random number?
   With the 'random' method of the 'Math' object.
 - How do you delete an element from an array?
