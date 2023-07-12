@@ -19,7 +19,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - How do you delete an element from an array?
   With the 'pop', 'shift', or 'splice' method.
 - How do you append an element to an array?
-  With the 'push' or 'unshift' methods.
+  With the 'push' method.
 - How do you break a string up into an array?
   With the 'split' method.
 - Do string methods change the original string? How would you check if you weren't sure?
@@ -31,7 +31,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - Roughly how many array methods are there according to the MDN Web docs?
   There are around 45 array methods.
 - What three-letter acronym should you always include in your Google search about a JavaScript method or CSS property?
-  DOM- 'Document Object Model'.
+  MDN
 
 ## Notes
 
