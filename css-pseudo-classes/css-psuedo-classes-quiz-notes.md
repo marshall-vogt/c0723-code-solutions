@@ -5,8 +5,9 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is a pseudo-class?
-
+  A pseudo-class is a selector in CSS that targets elements in a specific state.
 - What are CSS pseudo-classes useful for?
+  Pseudo-classes are useful for reducing the amount of assigned classes and increasing flexibility with code.
 
 ## Notes
 
