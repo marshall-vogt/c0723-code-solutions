@@ -11,43 +11,38 @@
   </head>
   <body>
     <h2>LEARN MORE</h2>
-    <form>
-      <div class="label">
-        <div class="left-align">
+    <div class="form">
+      <form>
+        <div class="input">
           <label for="email">COMPANY EMAIL</label>
+          <input type="email" id="email" placeholder="sally@company.co" />
         </div>
-      </div>
-      <div class="input">
-        <input type="email" id="email" placeholder="sally@company.co" />
-      </div>
-      <div class="label">
-        <label for="name">NAME</label>
-      </div>
-      <div class="input">
-        <input type="text" id="name" placeholder="Sally Smith" />
-      </div>
-      <div class="label">
-        <label for="hiringLocation">WHERE ARE YOU HIRING?</label>
-      </div>
-      <div class="input">
-        <input type="text" id="hiringLocation" placeholder="City, Country" />
-      </div>
-      <div class="label">
-        <label for="numberHiring"
-          >HOW MANY ENGINEERS ARE YOU HIRING IN THE NEXT 6 MONTHS?</label
-        >
-      </div>
-      <div class="input">
-        <select name="numberHiring" id="numberHiring">
-          <option>1-2 Engineers</option>
-          <option>3-5 Engineers</option>
-          <option>6-8 Engineers</option>
-          <option>9+ Engineers</option>
-        </select>
-      </div>
-      <div class="button">
-        <button type="submit">SUBMIT</button>
-      </div>
-    </form>
+
+        <div class="input">
+          <label for="name">NAME</label>
+          <input type="text" id="name" placeholder="Sally Smith" />
+        </div>
+
+        <div class="input">
+          <label for="hiringLocation">WHERE ARE YOU HIRING?</label>
+          <input type="text" id="hiringLocation" placeholder="City, Country" />
+        </div>
+
+        <div class="input">
+          <label for="numberHiring"
+            >HOW MANY ENGINEERS ARE YOU HIRING IN THE NEXT 6 MONTHS?</label
+          >
+          <select name="numberHiring" id="numberHiring">
+            <option value="1-2">1-2 Engineers</option>
+            <option value="3-5">3-5 Engineers</option>
+            <option value="6-8">6-8 Engineers</option>
+            <option value="9+">9+ Engineers</option>
+          </select>
+        </div>
+        <div class="button">
+          <button type="submit">SUBMIT</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

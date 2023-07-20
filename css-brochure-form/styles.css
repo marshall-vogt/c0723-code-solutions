@@ -1,14 +1,14 @@
-div.input {
-  text-align: center;
+div.form {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-div.label {
-  padding-left: 653px;
+div.input {
+  text-align: left;
 }
 
 div.button {
   text-align: right;
-  padding-right: 645px;
 }
 
 h2 {
@@ -28,6 +28,7 @@ label {
   font-style: normal;
   font-weight: 500;
   font-size: 0.7rem;
+  margin-left: 0.4rem;
 }
 
 input {
@@ -45,7 +46,7 @@ input {
 }
 
 ::placeholder {
-  padding-left: 10px;
+  padding-left: 0.5rem;
 }
 
 select {
