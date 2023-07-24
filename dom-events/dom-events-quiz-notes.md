@@ -9,7 +9,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is the purpose of events and event handling?
   To program automatic responses to signals that an event has occurred.
 - Are all possible parameters required to use a JavaScript method or function?
-  Yes
+  No, sometimes they are optional.
 - What method of element objects lets you set up a function to be called when a specific type of event occurs?
   addEventListener method
 - What is a callback function?
@@ -25,7 +25,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   ```js
   element.addEventListener('click', handleClick());
   ```
-  The first function is synchronous, the second function is asynchronous.
+  The first line is calling a reference to a function while the second is invoking the function.
 
 ## Notes
 
