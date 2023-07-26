@@ -9,17 +9,17 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What event is fired when a user's cursor leaves a form control?
   Blur
 - What event is fired as a user changes the value of a form control?
-  Change
+  Input
 - What event is fired when a user clicks the `"submit"` button within a `<form>`?
   Click
 - What does the `event.preventDefault()` method do?
-  It prevents an event that does not adhere to the guidelines required.
+  It prevents a default action that occurs after an event.
 - What does submitting a form without `event.preventDefault()` do?
-  It allows the form to be submitted without the needed information.
+  It refreshes the whole page.
 - What property of a form element object contains all of the form's controls.
-  HTMLFormElement.elements
+  The 'elements' property
 - What property of a form control object gets and sets its value?
-  The 'name' property
+  The 'value' property
 - What is one risk of writing a lot of code without checking to see if it works so far?
   Errors in the code will be harder to decipher.
 - What is an advantage of having your console open when writing a JavaScript program?
