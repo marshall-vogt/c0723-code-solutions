@@ -1,0 +1,29 @@
+* {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-bottom: 100px;
+}
+
+.current {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+  text-decoration: underline;
+  text-decoration-color: red;
+  text-underline-offset: 10px;
+}
