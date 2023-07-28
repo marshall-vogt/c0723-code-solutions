@@ -7,7 +7,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is the `event.target`?
   The original element that triggered an event.
 - What is the affect of setting an element to `display: none`?
-  The element and it's children are not rendered to the display.
+  The element and it's children are not rendered to the display and removes it from the document flow.
 - What does the `element.matches()` method take as an argument and what does it return?
   The 'matches()' method takes a CSS selector as an argument and returns a boolean.
 - How can you retrieve the value of an element's attribute?
