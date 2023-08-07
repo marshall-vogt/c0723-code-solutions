@@ -1,13 +1,4 @@
-setInterval(countdown, 1 * 1000);
-const setIntervalId = setInterval(
-  countdown,
-  1 * 1000,
-  4,
-  3,
-  2,
-  1,
-  'Earth Below Us'
-);
+const setIntervalId = setInterval(countdown, 1 * 1000);
 
 const $headingText = document.querySelector('.countdown-display');
 const countdownArray = [3, 2, 1, '~Earth Beeeelooowww Us~'];
@@ -17,6 +8,7 @@ function countdown() {
   if (i < countdownArray.length) {
     $headingText.textContent = countdownArray[i];
     i++;
+  } else {
+    clearInterval(setIntervalId);
   }
-  clearInterval(setIntervalId);
 }
