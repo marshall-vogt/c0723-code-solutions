@@ -9,7 +9,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What property of JavaScript functions can store shared behavior for instances created with `new`?
   The prototype property.
 - What does the `instanceof` operator do?
-  The instanceof operator checks for the presence of a prototype property.
+  The instanceof operator checks if the object on left was created from the object on right.
 
 ## Notes
 
