@@ -1,6 +1,6 @@
 function ExampleConstructor() {}
 
-console.log('value of prototype property', ExampleConstructor.prototype.value);
+console.log('value of prototype property', ExampleConstructor.prototype);
 console.log('typeof prototype property', typeof ExampleConstructor.prototype);
 
 const newExampleConstructor = new ExampleConstructor();
