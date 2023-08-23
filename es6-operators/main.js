@@ -11,17 +11,9 @@ const v4 = [3, 5, 7, 9];
  * Expected: v1 message logs, v2 message does not.
  */
 
-v1 && printTrue();
+v1 && console.log('v1 is truthy');
 
-function printTrue() {
-  console.log('v1 is truthy');
-}
-
-v2 && dontPrint();
-
-function dontPrint() {
-  console.log('v2 is truthy');
-}
+v2 && console.log('v2 is truthy');
 
 /* TODO:
  * Demonstrate how to assign a "default value" to a variable.
@@ -30,20 +22,14 @@ function dontPrint() {
  * Log both `config1` and `config2`.
  * Expected: `config1 = { value: 'Something' }`, `config2 = 'default-value'`.
  */
-let config1 = v1;
-let config2 = v2;
 
-config1 || assignDefault1();
+let config1 = v1 || 'default-value';
 
 function assignDefault1() {
   config1 = 'default-value';
 }
 
-config2 || assignDefault2();
-
-function assignDefault2() {
-  config2 = 'default-value';
-}
+const config2 = v2 || 'default-value';
 
 console.log(`config1 =`, config1, `, config2 = ${config2}`);
 
@@ -56,27 +42,11 @@ console.log(`config1 =`, config1, `, config2 = ${config2}`);
  * Expected: `config1 = { value: 'Something' }`, `config2 = ''`, `config3 = 'default-value'`.
  */
 
-let cfg1 = v1;
-let cfg2 = v2;
-let cfg3 = v3;
+const cfg1 = v1 ?? 'default-value';
 
-v1 ?? defaultCFG1();
+const cfg2 = v2 ?? 'default-value';
 
-function defaultCFG1() {
-  cfg1 = 'default-value';
-}
-
-v2 ?? defaultCFG2();
-
-function defaultCFG2() {
-  cfg2 = 'default-value';
-}
-
-v3 ?? defaultCFG3();
-
-function defaultCFG3() {
-  cfg3 = 'default-value';
-}
+const cfg3 = v3 ?? 'default-value';
 
 console.log('config1 =', cfg1, `, config2 = '${cfg2}'`, ', config3 =', cfg3);
 
@@ -88,28 +58,10 @@ console.log('config1 =', cfg1, `, config2 = '${cfg2}'`, ', config3 =', cfg3);
  * Log `tern1` and `tern2`.
  * Expected: `tern1 = 'truthy'`, `tern2 = 'falsy'`.
  */
-let tern1;
-let tern2;
 
-v1 ? tern1Truthy() : tern1Falsy();
+const tern1 = v1 ? 'truthy' : 'falsy';
 
-function tern1Truthy() {
-  tern1 = 'truthy';
-}
-
-function tern1Falsy() {
-  tern1 = 'falsy';
-}
-
-v2 ? tern2Truthy() : tern2Falsy();
-
-function tern2Truthy() {
-  tern2 = 'truthy';
-}
-
-function tern2Falsy() {
-  tern2 = 'falsy';
-}
+const tern2 = v2 ? 'truthy' : 'falsy';
 
 console.log(`tern1 = '${tern1}',`, `tern2 = '${tern2}'`);
 
