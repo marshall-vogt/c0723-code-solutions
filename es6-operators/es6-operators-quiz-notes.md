@@ -17,7 +17,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is `...` (spread) syntax? How do you use it with arrays and objects?
   Spread syntax allows the expansion of an array or string, or the enumeration of an object's properties into a new array, string, or object. The expanded array, string, or object can be placed inside of a new array, string, or object, respectively by using '...' followed by the name of the array, string, or object.
 - What data types can be spread into an array? Into an object?
-  Only arrays can be spread into an array, and objects spread into an object.
+  Only iterables can be spread into an array, and anything that has it's own properties can be spread into an object.
 - How does spread syntax differ from rest syntax?
   Spread syntax and rest syntax are opposite actions where spreading takes a single array and extracts all elements individually, while rest syntax takes an unspecified number of individual elements and condenses them into a single element.
 
