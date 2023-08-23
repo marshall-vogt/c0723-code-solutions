@@ -150,4 +150,3 @@ console.log('sObj =', sObj);
 
 const sArr = [100, ...v4];
 console.log(`sArr = [${sArr}]`);
-console.log(sArr);
