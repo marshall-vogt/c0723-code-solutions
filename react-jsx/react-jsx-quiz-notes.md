@@ -5,8 +5,9 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is JSX?
-
+  A syntax extension for writing HTML with JavaScript
 - How does React use JSX to render components?
+  With a JavaScript function
 
 ## Notes
 
