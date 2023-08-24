@@ -7,7 +7,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is a React component?
   A JavaScript function that adds HTML markup to a webpage.
 - How do you define a component in React?
-  With the function keyword, a function name, and curly braces.
+  With the function keyword, a capitalized function name, any parameters and curly braces, and an export.
 - How is a component "rendered" (made visible on the browser page)?
   It generates HTML from the component and adds it to the root component.
 
