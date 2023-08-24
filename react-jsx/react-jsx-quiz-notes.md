@@ -7,7 +7,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is JSX?
   A syntax extension for writing HTML with JavaScript
 - How does React use JSX to render components?
-  With a JavaScript function
+  React creates the DOM elements and then uses JSX to add the HTML markup.
 
 ## Notes
 
