@@ -26,7 +26,7 @@ function uniqueQuadratic(words) {
     i++ // _2 * n_ = O(n)
   ) {
     const word = words[i]; // _2 * n_ = O(n)
-    let isUnique = true; // _1 * 1_ = O(1)
+    let isUnique = true; // _1 * n_ = O(1)
     for (
       let c = 0; // _1 * n_ = O(n)
       c < i; // _1 * n * n_ = O(n^2)
