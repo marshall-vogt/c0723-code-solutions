@@ -1,0 +1,49 @@
+* {
+  font-family: Barlow, sans-serif;
+}
+
+h3 {
+  font-size: 0.8rem;
+}
+
+p {
+  font-size: 0.6rem;
+  font-weight: 400;
+}
+
+.row-1,
+.row-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.column-full {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.column-fourth {
+  flex-basis: calc(75% / 4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.container {
+  width: 100vw;
+  background-color: rgb(247 248 250);
+}
+
+.image1 {
+  width: 100%;
+}
+
+.image2 {
+  width: 20%;
+}
