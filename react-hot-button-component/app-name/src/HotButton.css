@@ -1,0 +1,29 @@
+.purple {
+  background-color: #351c75;
+  border: 5px solid black;
+}
+
+.violet {
+  background-color: #674ea7;
+  border: 5px solid black;
+}
+
+.red {
+  background-color: #e06666;
+  border: 5px solid black;
+}
+
+.orange {
+  background-color: #f6b26b;
+  border: 5px solid black;
+}
+
+.yellow {
+  background-color: #fbff00;
+  border: 5px solid black;
+}
+
+.white {
+  background-color: #fff;
+  border: 5px solid black;
+}
