@@ -6,13 +6,13 @@ export default function HotButton() {
   let color;
   if (clicks <= 3) {
     color = 'purple';
-  } else if (clicks > 3 && clicks <= 6) {
+  } else if (clicks <= 6) {
     color = 'violet';
-  } else if (clicks > 6 && clicks <= 9) {
+  } else if (clicks <= 9) {
     color = 'red';
-  } else if (clicks > 9 && clicks <= 12) {
+  } else if (clicks <= 12) {
     color = 'orange';
-  } else if (clicks > 12 && clicks <= 15) {
+  } else if (clicks <= 15) {
     color = 'yellow';
   } else {
     color = 'white';
