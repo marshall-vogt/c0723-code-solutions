@@ -1,0 +1,44 @@
+.button-background-Off,
+.button-background-On {
+  border: 1px solid;
+  height: 20px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 20%;
+  transition: background-color 0.5s ease;
+}
+
+.button-background-On {
+  background-color: green;
+}
+
+.button-background-Off {
+  background-color: grey;
+}
+
+.button-On,
+.button-Off {
+  border-radius: 50%;
+  border: 1px solid;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  transition: transform 0.5s ease;
+}
+
+.button-On {
+  transform: translateX(83%);
+}
+
+.button-Off {
+  transform: translateX(0);
+}
+
+.container {
+  display: flex;
+}
+
+.text {
+  margin-left: 1.2rem;
+}
