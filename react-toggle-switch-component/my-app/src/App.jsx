@@ -2,11 +2,7 @@ import './App.css';
 import ToggleButton from './ToggleButton';
 
 function App() {
-  return (
-    <>
-      <ToggleButton />
-    </>
-  );
+  return <ToggleButton />;
 }
 
 export default App;
