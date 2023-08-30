@@ -1,17 +1,13 @@
 import { useState } from 'react';
 
 export default function RegistrationFormControlled() {
-  const [userName, setUserName] = useState('');
+  const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    const form = e.target;
-    const formData = new FormData(form);
-    const formJson = Object.fromEntries(formData.entries());
-
-    console.log('Controlled input:', formJson);
+    console.log('Controlled input:', { username, password });
   }
   return (
     <form onSubmit={handleSubmit}>
@@ -19,7 +15,7 @@ export default function RegistrationFormControlled() {
         Username:
         <input
           name="username"
-          value={userName}
+          value={username}
           onChange={(e) => setUserName(e.target.value)}></input>
       </label>
       <label>
