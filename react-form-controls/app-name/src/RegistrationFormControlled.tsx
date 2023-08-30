@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export default function RegistrationFormControlled() {
-  const [username, setUserName] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   function handleSubmit(e) {
@@ -16,7 +16,7 @@ export default function RegistrationFormControlled() {
         <input
           name="username"
           value={username}
-          onChange={(e) => setUserName(e.target.value)}></input>
+          onChange={(e) => setUsername(e.target.value)}></input>
       </label>
       <label>
         Password:
