@@ -1,0 +1,42 @@
+* {
+  font-size: 1.2rem;
+  color: black;
+}
+
+.buttons {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 750px;
+}
+
+.column-sixth,
+.column-full {
+  margin: 2px;
+}
+
+.column-sixth {
+  width: 30px;
+}
+
+.previous,
+.next {
+  width: 60px;
+}
+
+.banner {
+  width: 120px;
+}
+
+.button,
+.previous,
+.next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid;
+}
