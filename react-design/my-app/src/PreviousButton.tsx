@@ -1,6 +1,9 @@
-export default function PreviousButton() {
+export default function PreviousButton({ onPreviousClick }) {
   return (
-    <button type="button" className="column-full previous">
+    <button
+      type="button"
+      className="column-full previous"
+      onClick={onPreviousClick}>
       Prev
     </button>
   );

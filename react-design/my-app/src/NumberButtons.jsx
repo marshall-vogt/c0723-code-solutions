@@ -1,4 +1,4 @@
-export default function NumberButtons({ count, index }) {
+export default function NumberButtons({ count, current, onIndicatorClick }) {
   const buttonArray = [];
   for (let i = 0; i < count; i++) {
     buttonArray.push(
@@ -6,7 +6,8 @@ export default function NumberButtons({ count, index }) {
         type="button"
         className="column-sixth button"
         key={i}
-        style={{ backgroundColor: index === i ? 'lightblue' : 'white' }}>
+        style={{ backgroundColor: current === i ? 'lightblue' : 'white' }}
+        onClick={() => onIndicatorClick(i)}>
         {i}
       </button>
     );

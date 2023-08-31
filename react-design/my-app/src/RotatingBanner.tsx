@@ -6,20 +6,36 @@ import './RotatingBanner.css';
 import { useState } from 'react';
 
 export default function RotatingBanner({ items }) {
-  const [index /* setIndex */] = useState(0);
+  function handlePreviousClick() {
+    return setIndex((index - 1 + items.length) % items.length);
+  }
+
+  function handleNextClick() {
+    return setIndex((index + 1) % items.length);
+  }
+
+  function handleIndicatorClick(i) {
+    return setIndex(i);
+  }
+
+  const [index, setIndex] = useState(0);
   return (
     <div className="container">
       <div className="row">
         <Banner item={items[index]} />
       </div>
       <div className="row">
-        <PreviousButton />
+        <PreviousButton onPreviousClick={handlePreviousClick} />
       </div>
       <div className="row">
-        <NumberButtons count={items.length} index={index} />
+        <NumberButtons
+          count={items.length}
+          current={index}
+          onIndicatorClick={handleIndicatorClick}
+        />
       </div>
       <div className="row">
-        <NextButton />
+        <NextButton onNextClick={handleNextClick} />
       </div>
     </div>
   );
