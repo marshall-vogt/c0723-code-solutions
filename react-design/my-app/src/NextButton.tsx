@@ -1,3 +1,7 @@
 export default function NextButton() {
-  return <div className="column-full next">Next</div>;
+  return (
+    <button type="button" className="column-full next">
+      Next
+    </button>
+  );
 }

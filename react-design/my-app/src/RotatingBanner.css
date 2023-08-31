@@ -1,8 +1,9 @@
 * {
   font-size: 1.2rem;
+  color: black;
 }
 
-.row {
+.buttons {
   display: flex;
 }
 
@@ -15,7 +16,6 @@
 
 .column-sixth,
 .column-full {
-  border: 1px solid;
   margin: 2px;
 }
 
@@ -30,4 +30,13 @@
 
 .banner {
   width: 120px;
+}
+
+.button,
+.previous,
+.next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid;
 }
