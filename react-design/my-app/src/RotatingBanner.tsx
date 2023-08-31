@@ -1,25 +1,22 @@
 import Banner from './Banner';
 import PreviousButton from './PreviousButton';
 import NextButton from './NextButton';
-import NumberButton from './NumberButton';
+import NumberButtons from './NumberButtons';
 import './RotatingBanner.css';
+import { useState } from 'react';
 
 export default function RotatingBanner({ items }) {
+  const [index /* setIndex */] = useState(0);
   return (
     <div className="container">
       <div className="row">
-        <Banner item={items[0]} />
+        <Banner item={items[index]} />
       </div>
       <div className="row">
         <PreviousButton />
       </div>
       <div className="row">
-        <NumberButton number="0" />
-        <NumberButton number="1" />
-        <NumberButton number="2" />
-        <NumberButton number="3" />
-        <NumberButton number="4" />
-        <NumberButton number="5" />
+        <NumberButtons count={items.length} index={index} />
       </div>
       <div className="row">
         <NextButton />
