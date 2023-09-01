@@ -14,10 +14,8 @@ export default function Accordion({ topics }) {
         }>
         <Topic subject={topic.title} topicIndex={index} />
       </div>
-      <div
-        className="info"
-        style={{ display: topicClickedIndex === index ? 'flex' : 'none' }}>
-        <Info info={topic.content} />
+      <div className="info">
+        {topicClickedIndex === index && <Info info={topic.content} />}
       </div>
     </div>
   ));
