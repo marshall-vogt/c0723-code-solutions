@@ -1,0 +1,48 @@
+.menuButton {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 40px;
+  background-color: white;
+  color: black;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.menuItems {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  color: black;
+  transition: transform 0.2s ease-in-out;
+}
+
+ul {
+  list-style: none;
+}
+
+.modal {
+  position: relative;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+  background-color: grey;
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid;
+  z-index: 1;
+}
