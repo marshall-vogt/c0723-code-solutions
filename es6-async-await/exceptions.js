@@ -26,7 +26,7 @@ async function throwSeveral() {
     console.log(elapsed(), 'throwSeveral1:', msg);
     msg = await fetch('foo2', true);
     console.log(elapsed(), 'throwSeveral2:', msg);
-    msg = fetch('foo3', true);
+    msg = await fetch('foo3', true);
     console.log(elapsed(), 'throwSeveral3:', msg);
   } catch (error) {
     console.log(elapsed(), 'throwSeveral Error:', error.message);
@@ -46,4 +46,6 @@ async function throwChained() {
   }
 }
 
-await throwChained(await throwSeveral(await throwOnce()));
+await throwOnce();
+await throwSeveral();
+await throwChained();
