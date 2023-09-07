@@ -13,9 +13,9 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is a REPL?
   A read-eval-print loop which reads, executes, and return a result from a user input.
 - When was Node.js created?
-  In 2009
+  In 2009.
 - What backend languages have you heard of?
-  Python, Ruby, and C#
+  Python, Ruby, and C#.
 
 ## Notes
 
