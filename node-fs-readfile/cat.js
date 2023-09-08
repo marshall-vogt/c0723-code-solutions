@@ -9,7 +9,7 @@ try {
     return contents;
   });
   const promises = await Promise.all(processes);
-  promises.map((promise) => console.log(promise));
+  promises.forEach((promise) => console.log(promise));
 } catch (error) {
   console.log(error);
 }
