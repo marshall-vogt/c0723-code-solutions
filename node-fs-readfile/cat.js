@@ -8,7 +8,6 @@ try {
     });
     return contents;
   });
-  console.log('processes', processes);
   const promises = await Promise.all(processes);
   promises.map((promise) => console.log(promise));
 } catch (error) {
