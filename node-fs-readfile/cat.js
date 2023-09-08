@@ -1,15 +1,9 @@
 import { readFile } from 'node:fs/promises';
 
 try {
-  const processes = process.argv.slice(2).map(async (file) => {
-    const process = new URL(file, import.meta.url);
-    const contents = await readFile(process, {
-      encoding: 'utf8',
-    });
-    return contents;
-  });
+  const processes = process.argv.slice(2).map((file) => readFile(file, 'utf8'));
   const promises = await Promise.all(processes);
-  promises.forEach((promise) => console.log(promise));
+  console.log(promises.join('\n'));
 } catch (error) {
   console.log(error);
 }
