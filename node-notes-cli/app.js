@@ -28,6 +28,8 @@ function update(id, string, obj) {
   if (Object.hasOwn(obj.notes, id)) {
     obj.notes[id] = string;
     write(obj);
+  } else {
+    throw new Error('No entry exists with that ID');
   }
 }
 
@@ -35,6 +37,8 @@ function Delete(id, obj) {
   if (Object.hasOwn(obj.notes, id)) {
     delete obj.notes[id];
     write(obj);
+  } else {
+    throw new Error('No entry exists with that ID');
   }
 }
 
