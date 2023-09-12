@@ -5,7 +5,7 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is the significance of an HTTP request's method?
-  The request method determines which callback functions will be called in the middleware.
+  The request method allows the client to make a request to the server.
 
 ## Notes
 
