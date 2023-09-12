@@ -23,25 +23,35 @@ async function write(obj: Data) {
 app.use(express.json());
 
 app.get('/api/notes', async (req, res) => {
-  const jsonData = await readFile('./data.json', 'utf-8');
-  const dataParsed: Data = JSON.parse(jsonData);
-  const entryArray: Entry[] = [];
-  for (const entry in dataParsed.notes) {
-    entryArray.push(dataParsed.notes[entry]);
+  try {
+    const jsonData = await readFile('./data.json', 'utf-8');
+    const dataParsed: Data = JSON.parse(jsonData);
+    const entryArray: Entry[] = [];
+    for (const entry in dataParsed.notes) {
+      entryArray.push(dataParsed.notes[entry]);
+    }
+    res.json(entryArray);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'an unexpected error occurred' });
   }
-  res.json(entryArray);
 });
 
 app.get('/api/notes/:id', async (req, res) => {
-  const jsonData = await readFile('./data.json', 'utf-8');
-  const dataParsed: Data = JSON.parse(jsonData);
-  const id = Number(req.params.id);
-  if (id < 0) {
-    res.status(400).send({ Error: 'ID must be a positive integer!' });
-  } else if (!dataParsed.notes[id]) {
-    res.status(404).send({ Error: `No entry exists with ID: ${id}` });
-  } else {
-    res.status(200).send(dataParsed.notes[id]);
+  try {
+    const jsonData = await readFile('./data.json', 'utf-8');
+    const dataParsed: Data = JSON.parse(jsonData);
+    const id = Number(req.params.id);
+    if (id < 0) {
+      res.status(400).json({ Error: 'ID must be a positive integer!' });
+    } else if (!dataParsed.notes[id]) {
+      res.status(404).json({ Error: `No entry exists with ID: ${id}` });
+    } else {
+      res.status(200).json(dataParsed.notes[id]);
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'an unexpected error occurred' });
   }
 });
 
@@ -50,16 +60,16 @@ app.post('/api/notes', async (req, res) => {
   const dataParsed: Data = JSON.parse(jsonData);
   try {
     if (!req.body.content) {
-      res.status(400).send({ Error: 'Content is a required field' });
+      res.status(400).json({ Error: 'Content is a required field' });
     }
     dataParsed.notes[dataParsed.nextId] = req.body;
     dataParsed.notes[dataParsed.nextId].id = dataParsed.nextId;
     write(dataParsed);
-    res.status(201).send(dataParsed.notes[dataParsed.nextId]);
+    res.status(201).json(dataParsed.notes[dataParsed.nextId]);
     dataParsed.nextId++;
   } catch (error) {
     console.error(error);
-    res.status(500).send({ Error: 'Unexpected error' });
+    res.status(500).json({ Error: 'Unexpected error' });
   }
 });
 
@@ -69,9 +79,9 @@ app.delete('/api/notes/:id', async (req, res) => {
   const id = Number(req.params.id);
   try {
     if (id < 0) {
-      res.status(400).send({ Error: 'ID must be a positive integer' });
+      res.status(400).json({ Error: 'ID must be a positive integer' });
     } else if (!dataParsed.notes[id]) {
-      res.status(404).send({ Error: `No entry exists with ID: ${id}` });
+      res.status(404).json({ Error: `No entry exists with ID: ${id}` });
     } else if (id in dataParsed.notes) {
       delete dataParsed.notes[id];
       write(dataParsed);
@@ -79,7 +89,7 @@ app.delete('/api/notes/:id', async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).send({ Error: 'An unexpected error occurred.' });
+    res.status(500).json({ Error: 'An unexpected error occurred.' });
   }
 });
 
@@ -89,19 +99,19 @@ app.put('/api/notes/:id', async (req, res) => {
   const id = Number(req.params.id);
   try {
     if (id < 0) {
-      res.status(400).send({ Error: 'ID must be a positive integer' });
+      res.status(400).json({ Error: 'ID must be a positive integer' });
     } else if (!req.body.content) {
-      res.status(400).send({ Error: 'Content is a required field' });
+      res.status(400).json({ Error: 'Content is a required field' });
     } else if (!dataParsed.notes[id]) {
-      res.status(404).send({ Error: `No entry exists with ID: ${id}` });
+      res.status(404).json({ Error: `No entry exists with ID: ${id}` });
     } else if (id in dataParsed.notes) {
       dataParsed.notes[id].content = req.body.content;
       write(dataParsed);
-      res.status(201).send(dataParsed.notes[id]);
+      res.status(201).json(dataParsed.notes[id]);
     }
   } catch (error) {
     console.error(error);
-    res.status(500).send({ Error: 'An unexpected error occurred.' });
+    res.status(500).json({ Error: 'An unexpected error occurred.' });
   }
 });
 
