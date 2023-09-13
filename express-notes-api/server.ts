@@ -15,6 +15,11 @@ type Data = {
   };
 };
 
+async function read(): Promise<Data> {
+  const jsonData = await readFile('./data.json', 'utf-8');
+  return JSON.parse(jsonData);
+}
+
 async function write(obj: Data) {
   const createData = JSON.stringify(obj, null, 2);
   await writeFile('./data.json', `${createData} \n`);
@@ -24,8 +29,7 @@ app.use(express.json());
 
 app.get('/api/notes', async (req, res) => {
   try {
-    const jsonData = await readFile('./data.json', 'utf-8');
-    const dataParsed: Data = JSON.parse(jsonData);
+    const dataParsed: Data = await read();
     const entryArray: Entry[] = [];
     for (const entry in dataParsed.notes) {
       entryArray.push(dataParsed.notes[entry]);
@@ -39,10 +43,9 @@ app.get('/api/notes', async (req, res) => {
 
 app.get('/api/notes/:id', async (req, res) => {
   try {
-    const jsonData = await readFile('./data.json', 'utf-8');
-    const dataParsed: Data = JSON.parse(jsonData);
+    const dataParsed: Data = await read();
     const id = Number(req.params.id);
-    if (id <= 0 || isNaN(id)) {
+    if (isNaN(id) || id <= 0) {
       res.status(400).json({ Error: 'ID must be a positive integer!' });
     } else if (!dataParsed.notes[id]) {
       res.status(404).json({ Error: `No entry exists with ID: ${id}` });
@@ -56,9 +59,8 @@ app.get('/api/notes/:id', async (req, res) => {
 });
 
 app.post('/api/notes', async (req, res) => {
-  const jsonData = await readFile('./data.json', 'utf-8');
-  const dataParsed: Data = JSON.parse(jsonData);
   try {
+    const dataParsed: Data = await read();
     if (!req.body.content) {
       res.status(400).json({ Error: 'Content is a required field' });
     }
@@ -74,11 +76,10 @@ app.post('/api/notes', async (req, res) => {
 });
 
 app.delete('/api/notes/:id', async (req, res) => {
-  const jsonData = await readFile('./data.json', 'utf-8');
-  const dataParsed: Data = JSON.parse(jsonData);
-  const id = Number(req.params.id);
   try {
-    if (id <= 0 || isNaN(id)) {
+    const dataParsed: Data = await read();
+    const id = Number(req.params.id);
+    if (isNaN(id) || id <= 0) {
       res.status(400).json({ Error: 'ID must be a positive integer' });
     } else if (!dataParsed.notes[id]) {
       res.status(404).json({ Error: `No entry exists with ID: ${id}` });
@@ -94,11 +95,10 @@ app.delete('/api/notes/:id', async (req, res) => {
 });
 
 app.put('/api/notes/:id', async (req, res) => {
-  const jsonData = await readFile('./data.json', 'utf-8');
-  const dataParsed: Data = JSON.parse(jsonData);
-  const id = Number(req.params.id);
   try {
-    if (id <= 0 || isNaN(id)) {
+    const dataParsed: Data = await read();
+    const id = Number(req.params.id);
+    if (isNaN(id) || id <= 0) {
       res.status(400).json({ Error: 'ID must be a positive integer' });
     } else if (!req.body.content) {
       res.status(400).json({ Error: 'Content is a required field' });
