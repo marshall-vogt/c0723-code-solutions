@@ -21,8 +21,7 @@ async function read(): Promise<Data> {
 }
 
 async function write(obj: Data) {
-  const createData = JSON.stringify(obj, null, 2);
-  await writeFile('./data.json', `${createData} \n`);
+  await writeFile('./data.json', JSON.stringify(obj, null, 2));
 }
 
 app.use(express.json());
