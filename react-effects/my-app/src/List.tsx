@@ -14,12 +14,12 @@ export default function List() {
   useEffect(() => {
     async function getItems() {
       try {
-        const items = await readItems();
+        const listItems = await readItems();
+        setItems(listItems);
+      } catch (err) {
+        setError(err);
+      } finally {
         setIsLoading(false);
-        setItems(items);
-      } catch (error) {
-        setIsLoading(false);
-        setError(error);
       }
     }
     getItems();
