@@ -15,7 +15,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - How can you tell if a function will be created with a closure?
   If a function is defined inside another function and it references variables from the outer function.
 - In React, what is one important case where you need to know if a closure was created?
-  When using useEffect to prevent stale closures or infinite rerenders.
+  When using useEffect to prevent stale closures or infinite rerenders. --> When putting a function reference inside a dependency array.
 
 ## Notes
 
