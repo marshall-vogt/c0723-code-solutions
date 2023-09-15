@@ -1,8 +1,8 @@
-export type ImageProp = {
+export type ImageProps = {
   image: string;
 };
 
-export default function Image({ image }: ImageProp) {
+export default function Image({ image }: ImageProps) {
   return (
     <div className="column-full banner">
       <img src={image} />
