@@ -5,11 +5,11 @@ import NextButton from './NextButton';
 import './Carousel.css';
 import { useState, useEffect } from 'react';
 
-type ImagesProp = {
+type CarouselProps = {
   images: string[];
 };
 
-export default function Carousel({ images }: ImagesProp) {
+export default function Carousel({ images }: CarouselProps) {
   const [index, setIndex] = useState(0);
   function handlePreviousClick() {
     return setIndex((index - 1 + images.length) % images.length);
