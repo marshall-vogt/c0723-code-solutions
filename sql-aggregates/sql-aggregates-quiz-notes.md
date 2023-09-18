@@ -5,8 +5,9 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What are some examples of aggregate functions?
-
+  count() gives total number of rows and sum() gives the sum of the row values.
 - What is the purpose of a `group by` clause?
+  To only use aggregate functions on the desired row.
 
 ## Notes
 
