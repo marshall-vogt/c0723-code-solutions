@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars -- Remove me */
 import { useEffect, useState } from 'react';
 import UserCard from './UserCard';
 import { User } from './Users';
