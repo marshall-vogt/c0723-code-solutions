@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars -- Remove me */
-/* eslint-disable @typescript-eslint/no-empty-function -- Remove me */
 import { useEffect, useState } from 'react';
 import PageTitle from './PageTitle';
 import TodoList from './TodoList';
@@ -60,6 +58,7 @@ export default function Todos() {
   /* Implement toggleCompleted to toggle the completed state of a todo. Hints are at the bottom of the file. */
   async function toggleCompleted(todoId: number) {
     const todoIndex = todos.findIndex((x) => x.todoId === todoId);
+    if (!todoIndex) throw new Error('Todo not found with that ID');
     const completionStatus = todos[todoIndex].isCompleted;
     const completionObject = { isCompleted: !completionStatus };
     try {
