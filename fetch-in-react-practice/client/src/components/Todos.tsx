@@ -57,11 +57,11 @@ export default function Todos() {
 
   /* Implement toggleCompleted to toggle the completed state of a todo. Hints are at the bottom of the file. */
   async function toggleCompleted(todoId: number) {
-    const todoIndex = todos.findIndex((x) => x.todoId === todoId);
-    if (!todoIndex) throw new Error('Todo not found with that ID');
-    const completionStatus = todos[todoIndex].isCompleted;
-    const completionObject = { isCompleted: !completionStatus };
     try {
+      const todoIndex = todos.findIndex((x) => x.todoId === todoId);
+      if (todoIndex < 0) throw new Error('Todo not found with that ID');
+      const completionStatus = todos[todoIndex].isCompleted;
+      const completionObject = { isCompleted: !completionStatus };
       const response = await fetch(`/api/todos/${todoId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
