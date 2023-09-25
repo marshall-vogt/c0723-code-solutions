@@ -8,7 +8,7 @@ type Image = {
 };
 
 export default function UploadForm() {
-  const [imageFile, setImageFile] = useState();
+  const [imageFile, setImageFile] = useState<Image>();
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     /* Prevent the browser's default behavior for form submissions.
@@ -77,6 +77,7 @@ export default function UploadForm() {
               </button>
             </div>
           </form>
+          {imageFile && <img src={imageFile.url} alt={imageFile.caption} />}
         </div>
       </div>
     </div>
