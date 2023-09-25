@@ -34,12 +34,13 @@ export default function UploadForm() {
         method: 'POST',
         body: formData,
       };
-      const res = await fetch('http://localhost:8080/api/uploads', req);
+      const res = await fetch('api/uploads', req);
       if (!res.ok) {
         console.error(`fetch Error ${res.status}`);
       }
       const data = await res.json();
       console.log('data:', data);
+      setImageFile(data);
     } catch (error) {
       alert(error);
     }
